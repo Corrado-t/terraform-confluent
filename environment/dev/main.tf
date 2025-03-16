@@ -17,6 +17,16 @@ provider "confluent" {
 // confluent_kafka_acl.app-consumer-read-on-topic, confluent_kafka_acl.app-consumer-read-on-group.
 // https://docs.confluent.io/platform/current/kafka/authorization.html#using-acls
 
+module "confluent_kafka_service_accounts" {
+  source = "../../module/confluent_kafka_sa_module"
+
+  kafka_id           = confluent_kafka_cluster.basic.id
+  environment_id     = confluent_environment.staging.id
+  kafka_cluster_name = confluent_kafka_cluster.basic.display_name
+  environment_name   = confluent_environment.staging.display_name
+  users              = jsondecode(file("users.json"))
+}
+
 module "confluent_kafka_acls" {
   source = "../../module/confluent_kafka_acl_module"
 
@@ -36,3 +46,4 @@ module "confluent_kafka_topics" {
   kafka_api_secret    = confluent_api_key.app-manager-kafka-api-key.secret
   topics              = jsondecode(file("topics.json"))
 }
+

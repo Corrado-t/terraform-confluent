@@ -1,4 +1,4 @@
-output "kafka_topics" {
-  description = "Map of created Confluent Kafka topics"
+output "kafka_acls" {
+  description = "Map of created Confluent Kafka acls"
   value       = confluent_kafka_acl.main
 }

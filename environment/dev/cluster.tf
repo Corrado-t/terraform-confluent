@@ -76,13 +76,3 @@ resource "confluent_api_key" "app-manager-kafka-api-key" {
 }
 
 
-resource "confluent_service_account" "app-consumer" {
-  display_name = "app-consumer"
-  description  = "Service account to consume from 'orders' topic of 'inventory' Kafka cluster"
-}
-
-resource "confluent_service_account" "app-producer" {
-  display_name = "app-producer"
-  description  = "Service account to produce to 'orders' topic of 'inventory' Kafka cluster"
-}
-
