@@ -1,0 +1,21 @@
+{
+    "orders": {
+      "config": {
+        "cleanup.policy": "delete",
+        "retention.ms": "259200000"
+      },
+      "partitions_count": 6
+    },
+    "payments": {
+      "config": {
+        "cleanup.policy": "compact",
+        "retention.ms": "604800000"
+      },
+      "partitions_count": 4
+    },
+    "clicks": {
+      "config": null,
+      "partitions_count": null
+    }
+  }
+  

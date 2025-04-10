@@ -1,0 +1,10 @@
+{
+  "app_consumer": {
+    "user_name": "app_consumer",
+    "description": "the consumer for the application"
+  },
+  "app_producer": {
+    "user_name": "app_producer",
+    "description": "the producer for the application"
+  }
+}

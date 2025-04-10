@@ -1,0 +1,5 @@
+confluent_cloud_api_key    = "key"
+confluent_cloud_api_secret = "secret"
+env                        = "dev"
+region                     = "us-east-2"
+kafka_name                 = "my-kafka-cluster"

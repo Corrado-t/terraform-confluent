@@ -1,0 +1,35 @@
+{
+    "consumer_orders_topic": {
+      "resource_type": "TOPIC",
+      "resource_name": "orders",
+      "pattern_type": "LITERAL",
+      "principal": "User:app-consumer",
+      "operation": "READ",
+      "permission": "ALLOW"
+    },
+    "consumer_orders_group": {
+      "resource_type": "GROUP",
+      "resource_name": "confluent_cli_consumer_",
+      "pattern_type": "PREFIXED",
+      "principal": "User:app-consumer",
+      "operation": "READ",
+      "permission": "ALLOW"
+      },
+    "producer_orders": {
+      "resource_type": "TOPIC",
+      "resource_name": "orders",
+      "pattern_type": "LITERAL",
+      "principal": "User:app-producer",
+      "operation": "WRITE",
+      "permission": "ALLOW"
+    },
+    "consumer_payments": {
+      "resource_type": "TOPIC",
+      "resource_name": "payments",
+      "pattern_type": "LITERAL",
+      "principal": "User:payment-service",
+      "operation": "READ",
+      "permission": "ALLOW"
+    }
+}
+  
